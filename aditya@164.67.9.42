@@ -216,8 +216,8 @@ for i in range(n_blocks):
     if i == 0:
         haplos_block = clarks(data_block, frame)
         haplos = haplos_block
-    elif i == n_blocks -1 and len(ex1[i*block:]) > 0:
-        final_block = ex1[i*block:]
+    elif i == n_blocks -1 and len(ex1[i*block]) > 0:
+        final_block = ex1[i*block]
         final_nSNP = len(final_block)
         final_nIndiv = len(final_block[0])
         final_haplo_block = np.zeros((final_nSNP, 2*final_nIndiv), dtype = np.int)
