@@ -1,6 +1,6 @@
 # CS 124: Machine Learning in Genetics
 # Project: Haplotype Phaser
-# Contributors: Aditya Pimplaskar, Aditya Joglekar
+
 import numpy as np
 import pandas as pd
 import itertools as it
@@ -191,7 +191,7 @@ def chunking(genotypes, split_size): # to get splits
 print('provide the file path for the genotypes: ')
 file = input()
 file = str(file)
-print('thank you. processing using Clark's algorithm')
+print('thank you. processing using Clarks algorithm')
 genots = readAndImpute(file)
 split_size = 5 # hyperparameter, selected by testing
 numChunks = chunking(genots, split_size)
@@ -212,6 +212,6 @@ for i in range(numChunks):
     else:
         haplos = np.concatenate((haplos, clarks(data)), axis = 0)
 
-np.savetxt('../test_data_sol.txt', haplos, fmt='%i', delimiter = ' ')
+np.savetxt('test_data_sol.txt', haplos, fmt='%i', delimiter = ' ')
 
 print('all done!')
